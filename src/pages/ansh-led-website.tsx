@@ -1,7 +1,6 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "../components/ui/button"
+import { Card, CardContent } from "../components/ui/card"
+import { Checkbox } from "../components/ui/checkbox"
 import { ChevronDown, Download, Phone } from "lucide-react"
 
 export default function Component() {
@@ -53,7 +52,7 @@ export default function Component() {
             ].map((category, index) => (
               <div key={index} className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
-                  <Image src={category.icon || "/placeholder.svg"} alt={category.name} width={60} height={60} />
+                  <img src={category.icon || "/placeholder.svg"} alt={category.name} width={60} height={60} />
                 </div>
                 <span className="text-[#4b4b4b] text-sm">{category.name}</span>
               </div>
@@ -107,7 +106,7 @@ export default function Component() {
                 <Card key={index} className="border border-[#f3f3f3] hover:shadow-md transition-shadow">
                   <CardContent className="p-4">
                     <div className="aspect-square bg-[#f3f3f3] rounded-lg mb-4 flex items-center justify-center">
-                      <Image
+                      <img
                         src="/placeholder.svg?height=120&width=120"
                         alt="24 Watt LED Street Light"
                         width={120}
