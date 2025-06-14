@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <section className="bg-[#7EA81D]">
+      <section className="bg-gradient-to-r from-[#7EA81D] to-[#B1C582]">
         <div className=" w-full container mx-auto px-4 text-center max-w-4xl py-10">
           <h1 className="text-center font-normal text-2xl xl:text-5xl">
             Illuminate Your World with Ansh LED

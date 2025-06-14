@@ -13,7 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
@@ -44,7 +44,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex flex-col ">
               <div className="flex flex-row space-x-4">
-                <Link href="#">About Us</Link>
+                <Link href="/about">About Us</Link>
                 <Link href="#">Contact Us</Link>
               </div>
               <div className="flex justify-center">
