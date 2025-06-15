@@ -45,7 +45,7 @@ const Navbar = () => {
             <div className="flex flex-col ">
               <div className="flex flex-row space-x-4">
                 <Link href="/about">About Us</Link>
-                <Link href="#">Contact Us</Link>
+                <Link href="/contact">Contact Us</Link>
               </div>
               <div className="flex justify-center">
                 <DropdownMenu>
