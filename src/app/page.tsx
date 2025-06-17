@@ -1,6 +1,6 @@
 import Navbar from "@/page-components/Navbar";
 import Image from "next/image";
-
+import Footer from "@/page-components/Footer";
 export default function Home() {
   return (
     <>
@@ -69,6 +69,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

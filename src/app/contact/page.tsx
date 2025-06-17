@@ -1,7 +1,7 @@
 import Navbar from "@/page-components/Navbar";
 import Image from "next/image";
 import React from "react";
-
+import Footer from "@/page-components/Footer";
 const page = () => {
   return (
     <>
@@ -181,6 +181,7 @@ const page = () => {
     </div>
   </div>
 </section>
+<Footer/>
     </>
   );
 };
