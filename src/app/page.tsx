@@ -1,6 +1,7 @@
 import Navbar from "@/page-components/Navbar";
 import Image from "next/image";
 import Footer from "@/page-components/Footer";
+import HomeProducts from "@/page-products/home-products/home_products";
 export default function Home() {
   return (
     <>
@@ -69,6 +70,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <HomeProducts/>
       <Footer />
     </>
   );

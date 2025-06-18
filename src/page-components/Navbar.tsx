@@ -12,6 +12,24 @@ import Image from "next/image";
 import { Phone, Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
+interface MenuItem {
+  name: string;
+  image: string;
+}
+
+interface Category {
+  label: string;
+  items: MenuItem[];
+}
+
+// define once, fill `items` later with real data
+const menuCategories: Category[] = [
+  { label: "Indoor Lights", items: [] },
+  { label: "Outdoor Lights", items: [] },
+  { label: "Solar Light", items: [] },
+  { label: "Industrial Products", items: [] },
+];
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -30,7 +48,6 @@ export default function Navbar() {
             <Link href="/contact" className="hover:text-green-600">
               Contact
             </Link>
-          
           </div>
           <div className="flex items-center space-x-2 text-gray-700">
             <Phone className="h-4 w-4" />
@@ -56,28 +73,44 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {[
-              "Indoor Lights",
-              "Outdoor Lights",
-              "Solar Light",
-              "Industrial Products",
-            ].map((label) => (
-              <DropdownMenu key={label}>
+            {menuCategories.map((cat) => (
+              <DropdownMenu key={cat.label}>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
                     className="flex items-center hover:text-green-600"
                   >
-                    {label}
+                    {cat.label}
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {/* TODO: dropdown items */}
+
+                <DropdownMenuContent
+                  sideOffset={4}
+                  align="start"
+                  className="bg-white p-4 shadow-md rounded-md min-w-[200px]"
+                >
+                  {cat.items.length > 0 ? (
+                    <div className="grid grid-cols-3 gap-4">
+                      {cat.items.map((item) => (
+                        <div key={item.name} className="text-center">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            width={80}
+                            height={80}
+                            className="mx-auto"
+                          />
+                          <p className="mt-2 text-sm">{item.name}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-gray-500">Coming Soon</p>
+                  )}
                 </DropdownMenuContent>
               </DropdownMenu>
             ))}
-           
           </div>
 
           {/* Mobile Menu Button */}

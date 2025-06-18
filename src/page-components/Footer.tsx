@@ -47,33 +47,31 @@ export default function Footer() {
         </div>
 
         {/* Navigate */}
-        {/* <div>
-          <h2 className="text-green-400 text-lg font-semibold mb-4">
-            Navigate
-          </h2>
+       <div>
+        
           <ul className="space-y-2">
             <li>
               <Link href="/">
-                <span className="hover:text-green-500">Ansh LED &gt;</span>
+                <span className="hover:text-green-500">Ansh LED </span>
               </Link>
             </li>
             <li>
               <Link href="/about">
-                <span className="hover:text-green-500">About Us &gt;</span>
+                <span className="hover:text-green-500">About Us </span>
               </Link>
             </li>
             <li>
               <Link href="/contact">
-                <span className="hover:text-green-500">Contact Us &gt;</span>
+                <span className="hover:text-green-500">Contact Us </span>
               </Link>
             </li>
             <li>
               <Link href="/support">
-                <span className="hover:text-green-500">Support &gt;</span>
+                <span className="hover:text-green-500">Support </span>
               </Link>
             </li>
           </ul>
-        </div> */}
+        </div> 
          <div>
           <h2 className="text-green-400 text-lg font-semibold mb-4">
             Privacy Policy
