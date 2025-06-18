@@ -1,0 +1,99 @@
+{
+  "product": {
+    "id": 12,
+    "name": "LED Bulb (ANLB)",
+    "description": "High-efficiency LED bulbs suitable for homes, offices, restaurants, marts, and galleries.",
+    "image_url": "/images/products/led-bulb-anlb.png",
+    "categories": [
+      {
+        "id": 101,
+        "body_type": "Standard",
+        "variant_name": "ANLB Series",
+        "image_url": "/images/products/led-bulb-anlb-variant.png",
+        "specs": [
+          {
+            "id": 1,
+            "wattage": "3W",
+            "color": "3000K - 6500K",
+            "battery": null,
+            "solar_panel": null
+          },
+          {
+            "id": 2,
+            "wattage": "5W",
+            "color": "3000K - 6500K",
+            "battery": null,
+            "solar_panel": null
+          },
+          {
+            "id": 3,
+            "wattage": "7W",
+            "color": "3000K - 6500K",
+            "battery": null,
+            "solar_panel": null
+          },
+          {
+            "id": 4,
+            "wattage": "9W",
+            "color": "3000K - 6500K",
+            "battery": null,
+            "solar_panel": null
+          },
+          {
+            "id": 5,
+            "wattage": "12W",
+            "color": "3000K - 6500K",
+            "battery": null,
+            "solar_panel": null
+          },
+          {
+            "id": 6,
+            "wattage": "15W",
+            "color": "3000K - 6500K",
+            "battery": null,
+            "solar_panel": null
+          },
+          {
+            "id": 7,
+            "wattage": "18W",
+            "color": "3000K - 6500K",
+            "battery": null,
+            "solar_panel": null
+          }
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 1,
+        "image_url": "/images/products/led-bulb-anlb-angle1.png",
+        "alt_text": "LED bulb front view"
+      },
+      {
+        "id": 2,
+        "image_url": "/images/products/led-bulb-anlb-angle2.png",
+        "alt_text": "LED bulb side view"
+      }
+    ],
+    "technical_details": {
+      "input_voltage": "90-300V AC - 50 Hz",
+      "power_factor": ">0.95",
+      "cri": ">85",
+      "beam_angle": ["170°", "270°", "360°"],
+      "lumens_per_watt": "90lm/W",
+      "housing": "Injection Moulded",
+      "operating_temperature": "-20°C to 60°C",
+      "base": ["B22", "E27", "E14"],
+      "ingress_protection": "IP20"
+    },
+    "used_in": ["Homes", "Offices", "Restaurants", "Marts", "Galleries"],
+    "features": [
+      "Up to 80% Energy Saving",
+      "Lasts long (more than 35,000 burning hrs)",
+      "Eco-Friendly",
+      "Non radiation",
+      "Good colour rendering",
+      "Reduces CO2"
+    ]
+  }
+}

@@ -15,14 +15,13 @@ export default function HomeProducts() {
             Shop by Specific Category
           </h2>
 
-
-         <Link
-  href="#"
-  className="inline-flex items-center space-x-1 text-[#121827] text-lg font-semibold hover:text-opacity-80"
->
-  <span>View all categories</span>
-  <ChevronRight className="h-5 w-5" />
-</Link>
+          <Link
+            href="/products"
+            className="inline-flex items-center space-x-1 text-[#121827] text-lg font-semibold hover:text-opacity-80"
+          >
+            <span>View all Products</span>
+            <ChevronRight className="h-5 w-5" />
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">

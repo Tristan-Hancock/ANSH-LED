@@ -109,8 +109,8 @@ const page = () => {
             <Image
               src="/sustainability.png"
               alt="Values Icon"
-              width={50}
-              height={50}
+              width={150}
+              height={150}
               className="mr-2.5"
             />
             <div className="flex flex-col items-center p-5">
@@ -125,8 +125,8 @@ const page = () => {
             <Image
               src="/warranty.png"
               alt="Values Icon"
-              width={50}
-              height={50}
+              width={150}
+              height={150}
               className="mr-2.5"
             />
             <div className="flex flex-col items-center p-5">
@@ -139,10 +139,10 @@ const page = () => {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/delivery.png"
+              src="/customer.png"
               alt="Values Icon"
-              width={50}
-              height={50}
+              width={150}
+              height={150}
               className="mr-2.5"
             />
             <div className="flex flex-col items-center p-5">
