@@ -16,7 +16,7 @@ export default function Home() {
             commercial spaces. Energy efficient, long-lasting, and
             environmentally friendly.
           </p>
-          <button className="bg-black text-white px-4 py-2 rounded-xl mt-7 xl:px-8 xl:py-3 xl:text-xl">
+          <button className="bg-black text-white px-4 py-2 rounded-xl mt-7 xl:px-8 xl:py-3 xl:text-xl hover:cursor-pointer">
             Get Quote
           </button>
         </div>
