@@ -40,7 +40,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/quality.png"
+              src="/warranty.png"
               alt="Quality"
               className="object-contain"
               height={150}
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/customer.png"
+              src="/delivery.png"
               alt="Customer Support"
               className="object-contain"
               height={150}

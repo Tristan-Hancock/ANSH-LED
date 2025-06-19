@@ -36,23 +36,25 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-gray-100 text-sm border-b border-gray-200">
-        <div className="container mx-auto flex justify-between items-center h-8 px-4">
-          <div className="flex space-x-6">
-            <Link href="/" className="hover:text-green-600">
-              Home
-            </Link>
-            <Link href="/about" className="hover:text-green-600">
-              About Us
-            </Link>
-            <Link href="/contact" className="hover:text-green-600">
-              Contact
-            </Link>
-          </div>
-          <div className="flex items-center space-x-2 text-gray-700">
-            <Phone className="h-4 w-4" />
-            <span>Support</span>
-            <span className="font-medium">+91 7043034626</span>
+      <div className="hidden md:block">
+        <div className="bg-gray-100 text-sm border-b border-gray-200">
+          <div className="container mx-auto flex justify-between items-center h-8 px-4">
+            <div className="flex space-x-6">
+              <Link href="/" className="hover:text-green-600">
+                Home
+              </Link>
+              <Link href="/about" className="hover:text-green-600">
+                About Us
+              </Link>
+              <Link href="/contact" className="hover:text-green-600">
+                Contact
+              </Link>
+            </div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <Phone className="h-4 w-4" />
+              <span>Support</span>
+              <span className="font-medium">+91 7043034626</span>
+            </div>
           </div>
         </div>
       </div>
