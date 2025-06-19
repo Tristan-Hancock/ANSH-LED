@@ -1,184 +1,149 @@
+"use client";
+
 import Navbar from "@/page-components/Navbar";
-import React from "react";
-import Image from "next/image";
 import Footer from "@/page-components/Footer";
-const page = () => {
+import Image from "next/image";
+import {
+  aboutHero,
+  aboutCopy,
+  stats,
+  vision,
+  mission,
+  values,
+  certifications,
+} from "@/data/about";
+
+export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <section className="bg-gradient-to-r from-[#7EA81D] to-[#B1C582]">
-        <div className=" w-full container mx-auto px-4 text-center max-w-4xl py-10">
-          <h1 className="text-center font-normal text-2xl xl:text-5xl">
-            ABOUT ANSH LED
+
+      {/* Hero */}
+      <section className="bg-gradient-to-r from-[#7EA81D] to-[#B1C582] py-16">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <h1 className="text-3xl md:text-5xl font-semibold text-white">
+            {aboutHero.title}
           </h1>
-          <p className="text-lg mt-5 xl:text-3xl">
-            Pioneering the future of lighting with innovative LED solutions
-            since 2015
+          <p className="mt-4 text-lg md:text-2xl text-white/90">
+            {aboutHero.subtitle}
           </p>
         </div>
       </section>
-      {/* information */}
 
-      <section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 w-full p-10">
-          <div>
-            <div className="md:p-10 p-3">
-              <p className="text-lg xl:text-2xl mb-5">
-                Figma ipsum component variant main layer. Library figma pencil
-                reesizing export effect layer prototype.
+      {/* Intro + Stats */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4">
+          {/* Copy & Stats */
+          <div className="space-y-6">
+            {aboutCopy.map((p, i) => (
+              <p key={i} className="text-gray-700 text-lg md:text-xl">
+                {p}
               </p>
-              <h1 className="text-xl xl:text-4xl mb-5 text-[#7EA81D]">
-                Something about the company
-              </h1>
-              <p className="text-lg xl:text-2xl mb-5">
-                Scrolling subtract rotate pen auto undo export italic mask undo.
-                Scrolling subtract rotate pen auto undo export italic mask undo.
-              </p>
+            ))}
+
+            <div className="flex flex-wrap gap-6 mt-8">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="flex flex-col items-center rounded-lg p-6"
+                  style={{
+                    backgroundColor: s.bg,
+                    border: `2px solid ${s.border}`,
+                  }}
+                >
+                  <span className="text-4xl font-bold">{s.value}</span>
+                  <span className="text-xl text-gray-700">{s.label}</span>
+                </div>
+              ))}
             </div>
+          </div>}
 
-            <div className="flex flex-col justify-center mt-5 mx-auto md:flex-row md:flex-wrap md:gap-10">
-              <div className="bg-[#FFF1FD] flex flex-col items-center p-5 mb-5 rounded-lg border-[#A81D77] border-2 px-12">
-                <h1 className="text-3xl font-bold">50K +</h1>
-                <p className="text-xl font-light">Happy Customers</p>
+          {/* Hero Image */}
+          <div className="flex justify-center">
+            <Image
+              src="/abouttemp.png"
+              alt="About Ansh LED"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+          {[vision, mission].map((block) => (
+            <div
+              key={block.title}
+              className="flex flex-col border-2 border-[#7C7C7C] rounded-xl p-8"
+            >
+              <div className="flex items-center mb-4">
+                <Image
+                  src={block.icon}
+                  alt={block.title}
+                  width={32}
+                  height={32}
+                  className="mr-3"
+                />
+                <h2 className="text-2xl font-bold">{block.title}</h2>
               </div>
+              <p className="text-gray-700">{block.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-              <div className="bg-[#FAFFF0] flex flex-col items-center p-5 mb-5 rounded-lg border-[#7EA81D] border-2 px-12">
-                <h1 className="text-3xl font-bold">10+ Years</h1>
-                <p className="text-xl font-light">Of Experience</p>
+      {/* Values */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-center text-3xl font-bold mb-2">Our Values</h2>
+          <p className="text-center text-gray-600 mb-12">
+            The principles that guide everything we do at Ansh LED
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {values.map((v) => (
+              <div
+                key={v.title}
+                className="flex flex-col items-center text-center p-6 space-y-4"
+              >
+                <Image
+                  src={v.icon}
+                  alt={v.title}
+                  width={50}
+                  height={50}
+                  className="mb-2"
+                />
+                <h3 className="text-xl font-bold">{v.title}</h3>
+                <p className="text-gray-700">{v.text}</p>
               </div>
-            </div>
-          </div>
-          <Image
-            src="/about.png"
-            alt="About Ansh LED"
-            className="object-cover mx-auto"
-            height={500}
-            width={500}
-          />
-        </div>
-      </section>
-
-      <section className="p-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col border-2 border-[#7C7C7C] rounded-xl p-8">
-            <div className="flex flex-row items-center justify-start mb-3">
-              <Image
-                src="/globe.png"
-                alt="Globe Icon"
-                width={30}
-                height={30}
-                className="mr-2.5"
-              />
-              <h1 className="text-3xl font-bold">Our Vision</h1>
-            </div>
-            <p>
-              To become the most trusted LED lighting brand in India, known for
-              quality, innovation, and customer satisfaction, while contributing
-              to a sustainable and energy-efficient future.
-            </p>
-          </div>
-          <div className="flex flex-col border-2 border-[#7C7C7C] rounded-xl p-8">
-            <div className="flex flex-row items-center justify-start mb-3">
-              <Image
-                src="/bulb.png"
-                alt="Bulb Icon"
-                width={30}
-                height={30}
-                className="mr-2.5"
-              />
-              <h1 className="text-3xl font-bold">Our Mission</h1>
-            </div>
-            <p>
-              To revolutionize the lighting industry by providing innovative,
-              energy-efficient, and affordable LED solutions that enhance the
-              quality of life while protecting our environment for future
-              generations.
-            </p>
+            ))}
           </div>
         </div>
       </section>
 
-      <section>
-        <h1 className="text-center font-bold text-4xl mb-2.5">Our Values</h1>
-        <p className="text-center p-4">
-          The principles that guide everything we do at Ansh LED
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 p-5 gap-5 mt-10">
-          <div className="flex flex-col items-center">
-            <Image
-              src="/sustainability.png"
-              alt="Values Icon"
-              width={50}
-              height={50}
-              className="mr-2.5"
-            />
-            <div className="flex flex-col items-center p-5">
-              <h1 className="text-2xl font-bold">Sustainability</h1>
-              <p className="text-center">
-                Committed to environmental responsibility through energy
-                efficient products and sustainable manufacturing practices.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src="/warranty.png"
-              alt="Values Icon"
-              width={50}
-              height={50}
-              className="mr-2.5"
-            />
-            <div className="flex flex-col items-center p-5">
-              <h1 className="text-2xl font-bold">Quality</h1>
-              <p className="text-center">
-                Uncompromising commitment to quality in every product, backed by
-                rigorous testing and premium materials.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src="/delivery.png"
-              alt="Values Icon"
-              width={50}
-              height={50}
-              className="mr-2.5"
-            />
-            <div className="flex flex-col items-center p-5">
-              <h1 className="text-2xl font-bold">Customer First</h1>
-              <p className="text-center">
-                Putting our customers at the heart of everything we do, with
-                exceptional service and support.
-              </p>
-            </div>
+      {/* Certifications */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Certifications & Awards</h2>
+          <p className="text-gray-600 mb-8">
+            Recognized for excellence and quality
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {certifications.map((c) => (
+              <div
+                key={c}
+                className="border-2 border-gray-300 rounded-lg py-4"
+              >
+                <p className="font-medium text-gray-700">{c}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-
-      <section className="md:mt-40">
-        <h1 className="text-center font-bold text-3xl">Certifications And Awards</h1>
-        <p className="text-center">Recognized for excellence and quality</p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 p-10">
-          <div className="border-2 border-[#CACACA] rounded-lg">
-            <p className="text-center font-semibold p-2">ISO 9001:2015 Certified</p>
-          </div>
-          <div className="border-2 border-[#CACACA] rounded-lg">
-            <p className="text-center font-semibold p-2">BIS Approved</p>
-          </div>
-          <div className="border-2 border-[#CACACA] rounded-lg">
-            <p className="text-center font-semibold p-2">Energy Star Rated</p>
-          </div>
-          <div className="border-2 border-[#CACACA] rounded-lg">
-            <p className="text-center font-semibold py-2">Best LED Brand 2023</p>
-          </div>
-        </div>
-      </section>
       <Footer />
     </>
   );
-};
-
-export default page;
+}
