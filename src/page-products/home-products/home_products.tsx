@@ -16,7 +16,7 @@ export default function HomeProducts() {
           </h2>
 
           <Link
-            href="#"
+            href="/products"
             className="inline-flex items-center space-x-1 text-[#121827] text-lg font-semibold hover:text-opacity-80"
           >
             <span>View all Products</span>

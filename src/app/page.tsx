@@ -25,7 +25,7 @@ export default function Home() {
         <div className="grid grid-cols-1 xl:grid-cols-3 p-10 xl:pt-20 gap-10">
           <div className="flex flex-col items-center">
             <Image
-              src="/energy.png"
+              src="/icons/energy.png"
               alt="Energy Efficient"
               className="object-contain"
               height={150}
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/warranty.png"
+              src="/icons/warranty.png"
               alt="Quality"
               className="object-contain"
               height={150}
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/delivery.png"
+              src="/icons/delivery.png"
               alt="Customer Support"
               className="object-contain"
               height={150}

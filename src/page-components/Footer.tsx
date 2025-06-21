@@ -16,18 +16,18 @@ export default function Footer() {
           <div className="flex items-center space-x-4">
             <a href="#" aria-label="Facebook">
               <Image
-                src="/facebook.png"
+                src="/icons/facebook.png"
                 alt="Facebook"
                 width={24}
                 height={24}
               />
             </a>
             <a href="#" aria-label="X (Twitter)">
-              <Image src="/x.png" alt="X" width={24} height={24} />
+              <Image src="/icons/x.png" alt="X" width={24} height={24} />
             </a>
             <a href="#" aria-label="Google+">
               <Image
-                src="/google.png"
+                src="/icons/google.png"
                 alt="Google+"
                 width={24}
                 height={24}
