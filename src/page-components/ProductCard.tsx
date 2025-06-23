@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 type ProductCardProps = {
+  subName: string;      // dynamic sub-category name
   bodyType: string;
   wattage: string;
   colours: string;
@@ -12,6 +13,7 @@ type ProductCardProps = {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  subName,
   bodyType,
   wattage,
   colours,
@@ -20,9 +22,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className="flex flex-col items-center bg-[#F1F1F1] p-5 max-w-sm rounded w-full h-fit">
-      <Image src={image} alt={`Street Light (${bodyType})`} width={150} height={150} />
+      <Image
+        src={image}
+        alt={`${subName} (${bodyType})`}
+        width={150}
+        height={150}
+      />
       <h1 className="text-center font-semibold text-lg mt-2">
-        Street Light ({bodyType})
+        {subName} ({bodyType})
       </h1>
       <p className="text-center text-sm mt-1">Wattage: {wattage}</p>
       <p className="text-center text-sm">Colours: {colours}</p>

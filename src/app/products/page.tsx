@@ -9,18 +9,20 @@ import { subcategories } from "@/data/subcategories";
 import { products } from "@/data/products";
 
 export default function ProductsIndex() {
-  // For now, display only the "outdoor" subcategories
+  // Show outdoor subcategories
   const subs = subcategories["outdoor"] || [];
-  // Which subcategory is active?
-  const [selectedSub, setSelectedSub] = useState<string>(subs[0]?.id || "");
 
-  // Items for the selected subcategory
+  // Track the current subcategory
+  const [selectedSub, setSelectedSub] = useState(subs[0]?.id || "");
+  const currentName = subs.find((s) => s.id === selectedSub)?.name || "";
+
+  // Products for the selected subcategory
   const items = products[selectedSub] || [];
-  // Derive available body types
+
+  // Body type filters
   const types = Array.from(new Set(items.map((p) => p.bodyType)));
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-  // Filter items by selected body types
   const filtered = useMemo(() => {
     if (!selectedTypes.length) return items;
     return items.filter((p) => selectedTypes.includes(p.bodyType));
@@ -43,7 +45,7 @@ export default function ProductsIndex() {
               key={sub.id}
               onClick={() => setSelectedSub(sub.id)}
               className={`flex-shrink-0 flex flex-col items-center px-3 py-2 rounded-md transition
-                ${selectedSub === sub.id ? 'bg-[#7EA81D] text-white' : 'bg-white text-gray-800 hover:bg-gray-200'}`}
+                ${selectedSub === sub.id ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
             >
               {sub.imageSrc && (
                 <Image
@@ -60,13 +62,18 @@ export default function ProductsIndex() {
         </div>
       </section>
 
-      {/* Filter & Products Layout */}
-      <div className="flex flex-col md:flex-row px-6 md:px-20 py-12 gap-8">
-        {/* Filters Sidebar */}
+      {/* Header */}
+      <section className="container mx-auto px-4 py-4">
+        <h2 className="text-2xl font-semibold">{currentName} ({items.length} Products)</h2>
+      </section>
+
+      {/* Filters + Grid */}
+      <div className="container mx-auto px-4 flex flex-col md:flex-row gap-8 pb-12">
+        {/* Filters */}
         <aside className="w-full md:w-1/4 bg-white p-6 shadow rounded">
-          <h2 className="text-xl font-semibold mb-4">Sort By</h2>
+          <h3 className="text-lg font-semibold mb-4">Sort By</h3>
           <div>
-            <h3 className="font-medium mb-2">Body Type</h3>
+            <h4 className="font-medium mb-2">Body Type</h4>
             <div className="space-y-2">
               {types.map((t) => (
                 <label key={t} className="flex items-center space-x-2">
@@ -82,7 +89,7 @@ export default function ProductsIndex() {
           </div>
         </aside>
 
-        {/* Products Grid */}
+        {/* Product Grid */}
         <main className="w-full md:w-3/4">
           {filtered.length === 0 ? (
             <p className="text-gray-500">No products match your filters.</p>
@@ -91,6 +98,7 @@ export default function ProductsIndex() {
               {filtered.map((p) => (
                 <ProductCard
                   key={p.id}
+                  subName={currentName}
                   bodyType={p.bodyType}
                   wattage={p.wattage}
                   colours={p.colours}
