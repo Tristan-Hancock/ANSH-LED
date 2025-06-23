@@ -1,92 +1,107 @@
-import Footer from "@/page-components/Footer";
+// File: src/app/products/page.tsx
+"use client";
+
+import React, { useState, useMemo } from "react";
 import Navbar from "@/page-components/Navbar";
 import ProductCard from "@/page-components/ProductCard";
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { categories } from "@/data/category-data";
+import { subcategories } from "@/data/subcategories";
+import { products } from "@/data/products";
 
-const page = () => {
+export default function ProductsIndex() {
+  // For now, display only the "outdoor" subcategories
+  const subs = subcategories["outdoor"] || [];
+  // Which subcategory is active?
+  const [selectedSub, setSelectedSub] = useState<string>(subs[0]?.id || "");
+
+  // Items for the selected subcategory
+  const items = products[selectedSub] || [];
+  // Derive available body types
+  const types = Array.from(new Set(items.map((p) => p.bodyType)));
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+
+  // Filter items by selected body types
+  const filtered = useMemo(() => {
+    if (!selectedTypes.length) return items;
+    return items.filter((p) => selectedTypes.includes(p.bodyType));
+  }, [items, selectedTypes]);
+
+  const toggleType = (type: string) =>
+    setSelectedTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+    );
+
   return (
     <>
       <Navbar />
-      <section className="bg-[#F3F3F3] ">
-        <div className="flex md:flex-row mx-auto justify-center items-center p-10 gap-10 overflow-scroll">
-          {categories.map((category) => (
-            <Link key={category.name} href={category.href}>
-              <div className="flex flex-col items-center">
+
+      {/* Subcategory Navigation */}
+      <section className="bg-gray-100 py-6">
+        <div className="container mx-auto px-4 flex overflow-x-auto space-x-6">
+          {subs.map((sub) => (
+            <button
+              key={sub.id}
+              onClick={() => setSelectedSub(sub.id)}
+              className={`flex-shrink-0 flex flex-col items-center px-3 py-2 rounded-md transition
+                ${selectedSub === sub.id ? 'bg-[#7EA81D] text-white' : 'bg-white text-gray-800 hover:bg-gray-200'}`}
+            >
+              {sub.imageSrc && (
                 <Image
-                  src={category.imageSrc}
-                  alt={category.name}
-                  width={150}
-                  height={150}
+                  src={sub.imageSrc}
+                  alt={sub.name}
+                  width={80}
+                  height={80}
+                  className="mb-2"
                 />
-                <p>{category.name}</p>
-              </div>
-            </Link>
+              )}
+              <span className="text-sm font-medium">{sub.name}</span>
+            </button>
           ))}
         </div>
       </section>
-      <section className="flex flex-col md:flex-row px-10 md:px-20 mb-20 mt-20">
-        <div className="flex flex-col bg-white p-10 shadow-md h-fit mb-20">
-          <h1 className="font-bold text-3xl">Filter</h1>
 
-          <h2 className="font-bold text-xl mt-6">Wattage</h2>
-          <div className="grid grid-cols-3 gap-6 mt-5">
-            <button className="border border-black p-2 font-semibold">
-              3W
-            </button>
-            <button className="border border-black p-2 font-semibold">5W</button>
-            <button className="border border-black p-2 font-semibold">7W</button>
-            <button className="border border-black p-2 font-semibold">9W</button>
-            <button className="border border-black p-2 font-semibold">12W</button>
-            <button className="border border-black p-2 font-semibold">15W</button>
-            <button className="border border-black p-2 font-semibold">18W</button>
-          </div>
-          <div className="mt-5">
-            <h1 className="font-bold text-xl">Type</h1>
-            <div className="mt-3 space-y-3">
-              <p className="text-[#505050] text-lg">Solar</p>
-              <p className="text-[#505050] text-lg">Lens</p>
+      {/* Filter & Products Layout */}
+      <div className="flex flex-col md:flex-row px-6 md:px-20 py-12 gap-8">
+        {/* Filters Sidebar */}
+        <aside className="w-full md:w-1/4 bg-white p-6 shadow rounded">
+          <h2 className="text-xl font-semibold mb-4">Sort By</h2>
+          <div>
+            <h3 className="font-medium mb-2">Body Type</h3>
+            <div className="space-y-2">
+              {types.map((t) => (
+                <label key={t} className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    checked={selectedTypes.includes(t)}
+                    onChange={() => toggleType(t)}
+                  />
+                  <span>{t}</span>
+                </label>
+              ))}
             </div>
           </div>
-        </div>
+        </aside>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 md:ml-20 w-full">
-          <ProductCard
-                bodyType="Lens"
-                wattage="12W"
-                colours="White, Black"
-                image="/product-images/outdoor-light.png"
-                link="/products/street-light/lens-12w"
-              />
-
-              <ProductCard
-                bodyType="Lens"
-                wattage="12W"
-                colours="White, Black"
-                image="/product-images/outdoor-light.png"
-                link="/products/street-light/lens-12w"
-              />
-              <ProductCard
-                bodyType="Glass"
-                wattage="12W"
-                colours="White, Black"
-                image="/product-images/outdoor-light.png"
-                link="/products/street-light/lens-12w"
-              />
-              <ProductCard
-                bodyType="Glass"
-                wattage="12W"
-                colours="White, Black"
-                image="/product-images/outdoor-light.png"
-                link="/products/street-light/lens-12w"
-              />
-        </div>
-      </section>
-      <Footer/>
+        {/* Products Grid */}
+        <main className="w-full md:w-3/4">
+          {filtered.length === 0 ? (
+            <p className="text-gray-500">No products match your filters.</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filtered.map((p) => (
+                <ProductCard
+                  key={p.id}
+                  bodyType={p.bodyType}
+                  wattage={p.wattage}
+                  colours={p.colours}
+                  image={p.image}
+                  link={p.href}
+                />
+              ))}
+            </div>
+          )}
+        </main>
+      </div>
     </>
   );
-};
-
-export default page;
+}
