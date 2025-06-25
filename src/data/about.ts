@@ -15,13 +15,13 @@ export const aboutHero = {
   ];
   
   export const vision = {
-    icon: "/globe.png",
+    icon: "/icons/globe.png",
     title: "Our Vision",
     text: `To become the most trusted LED lighting brand in India, known for quality, innovation, and customer satisfaction, while contributing to a sustainable and energy-efficient future.`,
   };
   
   export const mission = {
-    icon: "/bulb.png",
+    icon: "/icons/bulb.png",
     title: "Our Mission",
     text: `To revolutionize the lighting industry by providing innovative, energy-efficient, and affordable LED solutions that enhance the quality of life while protecting our environment for future generations.`,
   };

@@ -7,7 +7,7 @@ export interface ContactOption {
   export const contactOptions: ContactOption[] = [
     {
       title: "Message Us",
-      icon: "/message.png",
+      icon: "/icons/message.png",
       lines: [
         "",  // add whatsapp link here later
         "+91 91655 45678",                      // add whatsapp number here
@@ -16,7 +16,7 @@ export interface ContactOption {
     },
     {
       title: "Email Us",
-      icon: "/email.png",
+      icon: "/icons/email.png",
       lines: [
         "info@anshled.com",
         "sales@anshled.com",
@@ -25,7 +25,7 @@ export interface ContactOption {
     },
     {
       title: "Call Us",
-      icon: "/call.png",
+      icon: "/icons/call.png",
       lines: [
         "+91 91655 45678",
         "+91 77164 61066",
