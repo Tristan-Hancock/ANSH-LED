@@ -2,6 +2,29 @@ import Navbar from "@/page-components/Navbar";
 import Image from "next/image";
 import Footer from "@/page-components/Footer";
 import HomeProducts from "@/page-products/home-products/home_products";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | Ansh LED – Premium LED Lighting Solutions",
+  description:
+    "Illuminate your world with Ansh LED: energy-efficient, long-lasting LED lighting solutions for homes, offices, and commercial spaces.",
+  openGraph: {
+    title: "Home | Ansh LED",
+    description:
+      "Illuminate your world with Ansh LED: energy-efficient, long-lasting LED lighting solutions for homes, offices, and commercial spaces.",
+    url: "https://www.anshled.com",
+    images: [
+      {
+        url: "https://www.anshled.com/Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Ansh LED – Illuminate Your World",
+      },
+    ],
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <>
