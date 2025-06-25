@@ -28,26 +28,26 @@ export const aboutHero = {
   
   export const values = [
     {
-      icon: "/sustainability.png",
+      icon: "/icons/sustainability.png",
       title: "Sustainability",
       text: `Committed to environmental responsibility through energy-efficient products and sustainable manufacturing practices.`,
     },
     {
-      icon: "/warranty.png",
+      icon: "/icons/warranty.png",
       title: "Quality",
       text: `Uncompromising commitment to quality in every product, backed by rigorous testing and premium materials.`,
     },
     {
-      icon: "/delivery.png",
+      icon: "/icons/delivery.png",
       title: "Customer First",
       text: `Putting our customers at the heart of everything we do, with exceptional service and support.`,
     },
   ];
   
   export const certifications = [
-    "ISO 9001:2015 Certified",
-    "BIS Approved",
-    "Energy Star Rated",
-    "Best LED Brand 2023",
+    "ISO 9001:2008 Certified",
+    "LM79/LM80 Approved",
+    "Quality checked by professionals",
+    "Automated production lines",
   ];
   

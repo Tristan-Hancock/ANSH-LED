@@ -111,8 +111,8 @@ export default function AboutPage() {
                 <Image
                   src={v.icon}
                   alt={v.title}
-                  width={50}
-                  height={50}
+                  width={100}
+                  height={100}
                   className="mb-2"
                 />
                 <h3 className="text-xl font-bold">{v.title}</h3>

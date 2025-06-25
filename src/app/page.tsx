@@ -22,14 +22,14 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="grid grid-cols-1 xl:grid-cols-3 p-10 xl:pt-20 gap-10">
+        <div className="grid grid-cols-1 xl:grid-cols-3 p-10 xl:pt-40 gap-10 ">
           <div className="flex flex-col items-center">
             <Image
               src="/icons/energy.png"
               alt="Energy Efficient"
               className="object-contain"
-              height={150}
-              width={150}
+              height={125}
+              width={125}
             />
             <h1 className="text-center font-normal text-lg mt-2">
               Energy Efficient
@@ -43,8 +43,8 @@ export default function Home() {
               src="/icons/warranty.png"
               alt="Quality"
               className="object-contain"
-              height={150}
-              width={150}
+              height={125}
+              width={125}
             />
             <h1 className="text-center font-normal text-lg mt-2">
               5-Year Warranty
@@ -58,8 +58,8 @@ export default function Home() {
               src="/icons/delivery.png"
               alt="Customer Support"
               className="object-contain"
-              height={150}
-              width={150}
+              height={125}
+              width={125}
             />
             <h1 className="text-center font-normal text-lg mt-2">
               Free Delivery
