@@ -48,7 +48,7 @@ export default function Footer() {
 
         {/* Navigate */}
        <div>
-        
+       <p className="text-green-400 text-lg font-semibold mb-4">Navigate</p>
           <ul className="space-y-2">
             <li>
               <Link href="/">
