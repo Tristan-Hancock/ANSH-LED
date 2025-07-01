@@ -2,6 +2,29 @@ import Navbar from "@/page-components/Navbar";
 import Image from "next/image";
 import Footer from "@/page-components/Footer";
 import HomeProducts from "@/page-products/home-products/home_products";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | Ansh LED – Premium LED Lighting Solutions",
+  description:
+    "Illuminate your world with Ansh LED: energy-efficient, long-lasting LED lighting solutions for homes, offices, and commercial spaces.",
+  openGraph: {
+    title: "Home | Ansh LED",
+    description:
+      "Illuminate your world with Ansh LED: energy-efficient, long-lasting LED lighting solutions for homes, offices, and commercial spaces.",
+    url: "https://www.anshled.com",
+    images: [
+      {
+        url: "https://www.anshled.com/Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Ansh LED – Illuminate Your World",
+      },
+    ],
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <>
@@ -22,14 +45,14 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="grid grid-cols-1 xl:grid-cols-3 p-10 xl:pt-20 gap-10">
+        <div className="grid grid-cols-1 xl:grid-cols-3 p-10 xl:pt-40 gap-10 ">
           <div className="flex flex-col items-center">
             <Image
-              src="/energy.png"
+              src="/icons/energy.png"
               alt="Energy Efficient"
               className="object-contain"
-              height={150}
-              width={150}
+              height={125}
+              width={125}
             />
             <h1 className="text-center font-normal text-lg mt-2">
               Energy Efficient
@@ -40,11 +63,11 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/warranty.png"
+              src="/icons/warranty.png"
               alt="Quality"
               className="object-contain"
-              height={150}
-              width={150}
+              height={125}
+              width={125}
             />
             <h1 className="text-center font-normal text-lg mt-2">
               5-Year Warranty
@@ -55,11 +78,11 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/delivery.png"
+              src="/icons/delivery.png"
               alt="Customer Support"
               className="object-contain"
-              height={150}
-              width={150}
+              height={125}
+              width={125}
             />
             <h1 className="text-center font-normal text-lg mt-2">
               Free Delivery

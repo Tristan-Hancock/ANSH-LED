@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.anshled.com
+
+# Sitemaps
+Sitemap: https://www.anshled.com/sitemap.xml

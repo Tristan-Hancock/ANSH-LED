@@ -15,39 +15,39 @@ export const aboutHero = {
   ];
   
   export const vision = {
-    icon: "/globe.png",
+    icon: "/icons/globe.png",
     title: "Our Vision",
     text: `To become the most trusted LED lighting brand in India, known for quality, innovation, and customer satisfaction, while contributing to a sustainable and energy-efficient future.`,
   };
   
   export const mission = {
-    icon: "/bulb.png",
+    icon: "/icons/bulb.png",
     title: "Our Mission",
     text: `To revolutionize the lighting industry by providing innovative, energy-efficient, and affordable LED solutions that enhance the quality of life while protecting our environment for future generations.`,
   };
   
   export const values = [
     {
-      icon: "/sustainability.png",
+      icon: "/icons/sustainability.png",
       title: "Sustainability",
       text: `Committed to environmental responsibility through energy-efficient products and sustainable manufacturing practices.`,
     },
     {
-      icon: "/warranty.png",
+      icon: "/icons/warranty.png",
       title: "Quality",
       text: `Uncompromising commitment to quality in every product, backed by rigorous testing and premium materials.`,
     },
     {
-      icon: "/delivery.png",
+      icon: "/icons/delivery.png",
       title: "Customer First",
       text: `Putting our customers at the heart of everything we do, with exceptional service and support.`,
     },
   ];
   
   export const certifications = [
-    "ISO 9001:2015 Certified",
-    "BIS Approved",
-    "Energy Star Rated",
-    "Best LED Brand 2023",
+    "ISO 9001:2008 Certified",
+    "LM79/LM80 Approved",
+    "Quality checked by professionals",
+    "Automated production lines",
   ];
   
