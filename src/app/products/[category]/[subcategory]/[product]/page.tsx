@@ -5,19 +5,19 @@ import React from "react";
 import { fetchProduct } from "@/server/outdoor";
 
 interface Props {
-  params: {
+  params: Promise<{
     category: string;
     subcategory: string;
     product: string;
-  };
+  }>;
 }
 
-const page =async ({ params }: Props) => {
+export default async function Page({ params }: Props) {
   // const { subcategory, product } = params;
   // const productList = products[subcategory];
   // const productData = productList?.find((p) => p.id.includes(product));
 
-  const { category, subcategory, product } = params;
+  const { category, subcategory, product } = await params;
   const productData = await fetchProduct(category, subcategory, product);
 
   if (!productData) {
@@ -216,4 +216,4 @@ const page =async ({ params }: Props) => {
   );
 };
 
-export default page;
+
