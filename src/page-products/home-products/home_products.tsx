@@ -8,7 +8,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function HomeProducts() {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-40 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-semibold text-gray-800">
@@ -16,7 +16,7 @@ export default function HomeProducts() {
           </h2>
 
           <Link
-            href="#"
+            href="/products"
             className="inline-flex items-center space-x-1 text-[#121827] text-lg font-semibold hover:text-opacity-80"
           >
             <span>View all Products</span>
