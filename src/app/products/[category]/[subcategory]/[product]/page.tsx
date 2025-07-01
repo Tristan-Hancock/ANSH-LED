@@ -1,8 +1,8 @@
-import { products } from "@/data/products";
 import Footer from "@/page-components/Footer";
 import Navbar from "@/page-components/Navbar";
 import Image from "next/image";
 import React from "react";
+import { fetchProduct } from "@/server/outdoor";
 
 interface Props {
   params: {
@@ -12,10 +12,13 @@ interface Props {
   };
 }
 
-const page = ({ params }: Props) => {
-  const { subcategory, product } = params;
-  const productList = products[subcategory];
-  const productData = productList?.find((p) => p.id.includes(product));
+const page =async ({ params }: Props) => {
+  // const { subcategory, product } = params;
+  // const productList = products[subcategory];
+  // const productData = productList?.find((p) => p.id.includes(product));
+
+  const { category, subcategory, product } = params;
+  const productData = await fetchProduct(category, subcategory, product);
 
   if (!productData) {
     return <div>Product not found</div>;
@@ -29,8 +32,8 @@ const page = ({ params }: Props) => {
         <div className="flex justify-center md:justify-start">
           <Image
             className="border border-gray-300 rounded-lg object-contain max-h-[500px]"
-            src="/sample.png"
-            alt={`${productData.subcategory} ${productData.bodyType}`}
+            src={productData.image}
+            alt={`${productData.subcategory_id} ${productData.body_type}`}
             width={500}
             height={500}
           />
@@ -39,8 +42,8 @@ const page = ({ params }: Props) => {
         {/* Product Info */}
         <div className="flex-1">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            {productData.wattage} {productData.subcategory}{" "}
-            {productData.bodyType}
+            {productData.wattage} {productData.subcategory_id}{" "}
+            {productData.body_type}
           </h1>
 
           {/* Description */}
@@ -62,7 +65,7 @@ const page = ({ params }: Props) => {
             </h2> */}
 
             <div className="space-y-4">
-              {Object.entries(productData.specs || {}).map(([key, value]) => (
+              {/* {Object.entries(productData.specs || {}).map(([key, value]) => (
                 <div key={key} className="flex items-start">
                   <span className="w-40 font-semibold text-lg text-gray-700">
                     {key}:
@@ -71,7 +74,7 @@ const page = ({ params }: Props) => {
                 </div>
               ))}
 
-              <hr className="my-4 border-gray-300 " />
+              <hr className="my-4 border-gray-300 " /> */}
 
               <div className="flex">
                 <span className="w-40 font-semibold text-lg text-gray-700">
@@ -87,7 +90,7 @@ const page = ({ params }: Props) => {
                   Body Type:
                 </span>
                 <span className="text-lg text-gray-900">
-                  {productData.bodyType}
+                  {productData.body_type}
                 </span>
               </div>
 
@@ -96,7 +99,7 @@ const page = ({ params }: Props) => {
                   Category:
                 </span>
                 <span className="text-lg text-gray-900">
-                  {productData.category}
+                  {productData.category_id}
                 </span>
               </div>
             </div>

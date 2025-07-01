@@ -61,7 +61,7 @@ export default function AboutPage() {
           {/* Hero Image */}
           <div className="flex justify-center">
             <Image
-              src="/abouttemp.png"
+              src="/icons/abouttemp.png"
               alt="About Ansh LED"
               width={500}
               height={500}

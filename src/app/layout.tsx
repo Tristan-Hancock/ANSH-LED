@@ -23,7 +23,6 @@ export const metadata: Metadata = {
   description:
     "Ansh LED provides energy-efficient, long-lasting LED lighting solutions for homes, offices, and commercial spaces across India.",
   // Ensure responsive scaling on mobile
-  viewport: "width=device-width, initial-scale=1",
   // Favicon
   icons: {
     icon: "/favicon.png",
@@ -52,6 +51,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+    width:"device-width",
+    initialScale: 1
+}
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
