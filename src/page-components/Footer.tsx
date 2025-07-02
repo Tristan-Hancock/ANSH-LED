@@ -66,9 +66,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/support">
-                <span className="hover:text-green-500">Support </span>
-              </Link>
+            
             </li>
           </ul>
         </div> 
