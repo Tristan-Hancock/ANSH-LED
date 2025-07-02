@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url: "https://www.anshled.com",
     title: "Ansh LED – Premium LED Lighting Solutions",
     description:
-      "Energy-efficient, long-lasting LED lighting for every application.",
+      "Ansh Led is Energy-efficient, long-lasting LED lighting for every application.",
     siteName: "Ansh LED",
     images: [
       {
