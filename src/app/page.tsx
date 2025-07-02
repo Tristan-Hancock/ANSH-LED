@@ -3,7 +3,7 @@ import Image from "next/image";
 import Footer from "@/page-components/Footer";
 import HomeProducts from "@/page-products/home-products/home_products";
 import { Metadata } from "next";
-
+//dummy push
 export const metadata: Metadata = {
   title: "Home | Ansh LED – Premium LED Lighting Solutions",
   description:
