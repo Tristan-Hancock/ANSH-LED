@@ -36,7 +36,7 @@ export default function Home() {
           </h1>
           <p className="text-lg mt-5 xl:text-3xl">
             Premium quality LED lighting solutions for homes, offices, and
-            commercial spaces.Ansh Led is Energy efficient, long-lasting, and
+            commercial spaces.Ansh LED is Energy efficient, long-lasting, and
             environmentally friendly.
           </p>
           <button className="bg-black text-white px-4 py-2 rounded-xl mt-7 xl:px-8 xl:py-3 xl:text-xl hover:cursor-pointer">
