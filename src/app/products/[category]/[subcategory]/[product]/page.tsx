@@ -3,7 +3,7 @@ import Navbar from "@/page-components/Navbar";
 import Image from "next/image";
 import React from "react";
 import { fetchProduct } from "@/server/outdoor";
-
+//second dummy push
 interface Props {
   params: Promise<{
     category: string;
